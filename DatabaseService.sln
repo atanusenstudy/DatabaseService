@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseService", "DatabaseService\DatabaseService.csproj", "{31B02ECC-4998-4A5F-9545-81D399BE1FBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{A16A94CE-DA27-4507-BCF2-69EEB8A8577D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{21BAF183-A5D5-4C7B-9A14-4F632E3DA0A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31B02ECC-4998-4A5F-9545-81D399BE1FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B02ECC-4998-4A5F-9545-81D399BE1FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B02ECC-4998-4A5F-9545-81D399BE1FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B02ECC-4998-4A5F-9545-81D399BE1FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A16A94CE-DA27-4507-BCF2-69EEB8A8577D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16A94CE-DA27-4507-BCF2-69EEB8A8577D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16A94CE-DA27-4507-BCF2-69EEB8A8577D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16A94CE-DA27-4507-BCF2-69EEB8A8577D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BAF183-A5D5-4C7B-9A14-4F632E3DA0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BAF183-A5D5-4C7B-9A14-4F632E3DA0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BAF183-A5D5-4C7B-9A14-4F632E3DA0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BAF183-A5D5-4C7B-9A14-4F632E3DA0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3B1B852-7E3B-4A63-B720-7688D9A329D1}
+	EndGlobalSection
+EndGlobal
