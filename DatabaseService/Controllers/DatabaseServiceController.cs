@@ -13,14 +13,14 @@ namespace DatabaseService.Controllers
     [Route("api/[controller]")]
     public class DatabaseService : ControllerBase
     {
-        //private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ApplicationDbContext dbContxt;
 
 
-        public DatabaseService(ApplicationDbContext dbContxt)
+        public DatabaseService(ApplicationDbContext dbContxt,IUnitOfWork unitOfWork)
         {
             this.dbContxt = dbContxt;
-            //_unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
         [HttpGet("Hi")]
         public async Task<IActionResult> GetHi()
@@ -38,12 +38,10 @@ namespace DatabaseService.Controllers
         {
             try
             {
-
-
                 int count = 0;
                 var savedStrings = new Dictionary<string, string>();
-                //savedStrings = _unitOfWork.UniqueString.GetAll().ToDictionary(s => s.Data, s => s.Data);
-                savedStrings = this.dbContxt.UniqueStrings.ToDictionary(s => s.Data, s => s.Data);
+                savedStrings = _unitOfWork.UniqueString.GetAll().ToDictionary(s => s.Data, s => s.Data);
+                //savedStrings = this.dbContxt.UniqueStrings.ToDictionary(s => s.Data, s => s.Data);
 
                 // Store unique strings in the database
                 foreach (var ele in uniqueStrings)
@@ -52,7 +50,8 @@ namespace DatabaseService.Controllers
                     if (!savedStrings.ContainsKey(ele))
                     {
                         savedStrings.Add(ele, ele);
-                        this.dbContxt.UniqueStrings.AddAsync(new UniqueString() { Data = ele });
+                        //this.dbContxt.UniqueStrings.AddAsync(new UniqueString() { Data = ele });
+                        _unitOfWork.UniqueString.Add(new UniqueString() { Data = ele });
                     }
                     else
                     {
@@ -60,7 +59,9 @@ namespace DatabaseService.Controllers
                     }
                 }
                 if (count == 0)
-                    this.dbContxt.SaveChangesAsync();
+                {
+                    _unitOfWork.Save();// this.dbContxt.SaveChangesAsync();
+                }
                 else
                 {
                     return BadRequest("Some Repeated data found");
